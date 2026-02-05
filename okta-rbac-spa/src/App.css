@@ -1,0 +1,525 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #f5f7fa;
+  color: #1f2937;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Login Page */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 48px 32px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.login-header {
+  margin-bottom: 32px;
+}
+
+.login-header h1 {
+  font-size: 32px;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.login-header p {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.login-description {
+  font-size: 15px;
+  color: #4b5563;
+  margin-bottom: 28px;
+  line-height: 1.5;
+}
+
+.login-button {
+  width: 100%;
+  padding: 12px 16px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 24px;
+}
+
+.login-button:hover {
+  background: #5568d3;
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+}
+
+.login-button:active {
+  transform: scale(0.98);
+}
+
+.login-footer {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/* Unauthorized Page */
+.unauthorized-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f5f7fa;
+  padding: 20px;
+}
+
+.unauthorized-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 48px 32px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.unauthorized-code {
+  font-size: 64px;
+  color: #dc2626;
+  margin-bottom: 16px;
+}
+
+.unauthorized-card h2 {
+  font-size: 24px;
+  color: #1f2937;
+  margin-bottom: 12px;
+}
+
+.unauthorized-card p {
+  font-size: 15px;
+  color: #4b5563;
+  margin-bottom: 8px;
+}
+
+.unauthorized-hint {
+  font-size: 13px;
+  color: #6b7280;
+  font-style: italic;
+  margin-bottom: 24px !important;
+}
+
+.unauthorized-button {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.unauthorized-button:hover {
+  background: #2563eb;
+}
+
+/* App Shell */
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+  background: #f5f7fa;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  background: linear-gradient(180deg, #1f2937 0%, #111827 100%);
+  color: white;
+  padding: 24px 0;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.sidebar-logo {
+  padding: 0 20px;
+  margin-bottom: 32px;
+}
+
+.sidebar-logo h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #f3f4f6;
+  letter-spacing: 0.5px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-section {
+  padding: 12px 0;
+}
+
+.nav-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #9ca3af;
+  padding: 0 20px;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.nav-link {
+  display: block;
+  padding: 12px 20px;
+  color: #d1d5db;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+}
+
+.nav-link.active {
+  background: rgba(99, 102, 241, 0.2);
+  color: #60a5fa;
+  border-left-color: #60a5fa;
+  font-weight: 600;
+}
+
+/* Main Content Area */
+.app-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+} 
+
+.navbar {
+  background: white;
+  padding: 16px 24px;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.navbar-title h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.navbar-profile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.profile-info {
+  text-align: right;
+}
+
+.profile-name {
+  font-weight: 600;
+  font-size: 14px;
+  color: #1f2937;
+}
+
+.profile-email {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.logout-button {
+  padding: 8px 16px;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.logout-button:hover {
+  background: #dc2626;
+}
+
+/* Content Area */
+.app-content {
+  padding: 32px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Dashboard */
+.dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 24px;
+}
+
+.dashboard h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 16px;
+}
+
+.welcome-section {
+  background: white;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  margin-bottom: 28px;
+}
+
+.welcome-section p {
+  font-size: 16px;
+  color: #4b5563;
+  margin-bottom: 8px;
+}
+
+.email {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.role-badge {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: inline-block;
+  background: #dbeafe;
+  color: #1e40af;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.dashboard-section {
+  background: white;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  margin-bottom: 24px;
+}
+
+.api-controls {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background: #3b82f6;
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #2563eb;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error-message {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-bottom: 16px;
+  border-left: 4px solid #dc2626;
+}
+
+.api-response {
+  background: #f9fafb;
+  padding: 16px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+
+.api-response h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #1f2937;
+}
+
+.api-response pre {
+  background: #1f2937;
+  color: #d1d5db;
+  padding: 12px;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.resource-list {
+  list-style: none;
+  padding: 0;
+}
+
+.resource-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid #f3f4f6;
+  font-size: 15px;
+  color: #4b5563;
+  display: flex;
+  align-items: center;
+}
+
+.resource-list li:before {
+  content: "✓";
+  color: #10b981;
+  font-weight: bold;
+  margin-right: 12px;
+  font-size: 18px;
+}
+
+.resource-list li:last-child {
+  border-bottom: none;
+}
+
+.profile-form {
+  display: grid;
+  gap: 12px;
+  max-width: 400px;
+}
+
+.profile-form input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+
+
+.userinfo-card {
+  background: #f9fafb;
+  padding: 16px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  margin-top: 16px;
+}
+
+.userinfo-card pre {
+  background: #1f2937;
+  color: #d1d5db;
+  padding: 12px;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.btn-secondary {
+  background: #6b7280;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .app-shell {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    padding: 16px 0;
+    position: relative;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .navbar-profile {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .app-content {
+    padding: 20px;
+  }
+
+  .dashboard h1 {
+    font-size: 24px;
+  }
+
+  .welcome-section,
+  .dashboard-section {
+    padding: 16px;
+  }
+}
