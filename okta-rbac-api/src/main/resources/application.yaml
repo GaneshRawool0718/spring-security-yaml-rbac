@@ -1,0 +1,25 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${ISSUER_URL}
+  config:
+    import: classpath:permissions.yaml
+
+server:
+  port: 8080
+
+okta:
+  oauth2:
+    issuer: ${ISSUER_URL}
+  org:
+    url: ${OKTA_ORG_URL}
+  client:
+    token: ${OKTA_API_TOKEN}
+  app:
+    id: ${OKTA_APP_ID}
+    idol-name-key: ${OKTA_IDOL_NAME_KEY:idolName}
+
+# Permissions configuration is imported from permissions.yaml
+# See permissions.yaml for detailed role-to-permission and API mappings
