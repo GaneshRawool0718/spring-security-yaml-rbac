@@ -1,0 +1,46 @@
+services:
+  # Spring Boot API
+  api:
+    build:
+      context: ./okta-rbac-api
+      dockerfile: Dockerfile
+    container_name: okta-rbac-api
+    ports:
+      - "8080:8080"
+    environment:
+      - ISSUER_URL=${ISSUER_URL}
+      - OKTA_ORG_URL=${OKTA_ORG_URL}
+      - CLIENT_ID=${CLIENT_ID}
+      - OKTA_API_TOKEN=${OKTA_API_TOKEN}
+      - OKTA_APP_ID=${OKTA_APP_ID}
+      - OKTA_IDOL_NAME_KEY=${OKTA_IDOL_NAME_KEY:-idolName}
+    volumes:
+      - api-logs:/app/logs
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:8080/actuator/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - okta-network
+
+  # React SPA
+  spa:
+    build:
+      context: ./okta-rbac-spa
+      dockerfile: Dockerfile
+    container_name: okta-rbac-spa
+    ports:
+      - "3000:80"
+    depends_on:
+      - api
+    networks:
+      - okta-network
+
+volumes:
+  api-logs:
+
+networks:
+  okta-network:
+    driver: bridge
