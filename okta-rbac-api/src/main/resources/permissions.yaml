@@ -1,0 +1,15 @@
+security:
+  permissions:
+    roles:
+      ROLE_ADMIN:
+        - API_ADMIN_READ
+        - API_USER_READ
+        - API_USER_WRITE
+        - API_APP_USER_READ
+        - API_APP_USER_WRITE
+
+      ROLE_USER:
+        - API_USER_READ
+        - API_USER_WRITE
+        - API_APP_USER_READ
+        - API_APP_USER_WRITE
